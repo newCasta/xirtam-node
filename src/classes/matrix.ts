@@ -1,4 +1,4 @@
-import {
+import type {
     MatrixItem,
     MatrixType,
     HasItemCallback,
@@ -50,7 +50,7 @@ export class Matrix<T> extends Array<MatrixItem<T>> implements M<T> {
                 return this.some(e => {
                     if (e.length === predicate.length) {
                         return predicate.every((v, i) => v === e[i])
-                    } else false
+                    } else return false
                 })
             }
         }

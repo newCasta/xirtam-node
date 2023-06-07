@@ -5,12 +5,15 @@
         "lib": ["ESNext"],
         "moduleResolution": "nodenext",
         "outDir": "./lib",
+        "types": ["node", "jest"],
         "strictNullChecks": true,
         "noImplicitAny": true,
         "esModuleInterop": true,
         "noUnusedParameters": true,
         "useDefineForClassFields": true,
-        "isolatedModules": true
+        "isolatedModules": true,
+        "allowImportingTsExtensions": true
     },
-    "exclude": ["node_modules", "**/node_modules/*"]
+    "include": ["."],
+    "exclude": ["node_modules", "**/node_modules/*", "src/test"]
 }

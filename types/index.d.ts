@@ -1,14 +1,14 @@
-export type NormalizeMatrixItem<T> = [T] extends [Array<unknown>] ? T : T[]
+export type NormalizeMatrixItem<T> = [T] extends [unknown[]] ? T : T[]
 export type MatrixItem<T> = NormalizeMatrixItem<T>
 export type MatrixType<T> = Array<MatrixItem<T>>
 
-type MatrixCallback<T> = (
+type MatrixCallback<T, R> = (
     value: NormalizeMatrixItem<T>,
     index: number,
     obj: MatrixType<T>
-) => unknown
+) => R
 
-export type HasItemCallback<T> = MatrixCallback<T>
+export type HasItemCallback<T> = MatrixCallback<T, boolean>
 
 /**
  * Class representing a Matrix
