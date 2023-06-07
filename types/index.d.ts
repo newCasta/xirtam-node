@@ -13,7 +13,7 @@ export type HasItemCallback<T> = MatrixCallback<T, boolean>
 /**
  * Class representing a Matrix
  */
-export class Matrix<T> {
+export class Matrix<T> extends Array<MatrixItem<T>> {
     /**
      * Create a new Matrix
      * @param arr - The items you want to put into the Matrix

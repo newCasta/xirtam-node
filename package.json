@@ -1,13 +1,15 @@
 {
-    "name": "xirtam",
+    "name": "xirtam-test",
     "version": "1.0.0",
     "description": "Xirtam is a library base on a class call Matrix that let you use it like if it where a matrix",
-    "main": "index.js",
+    "exports": {
+        ".": "./lib/index.js"
+    },
     "type": "module",
     "types": "./types/index.d.ts",
     "scripts": {
-        "compile": "rimraf lib && tsc",
-        "test": "vitest"
+        "build": "rimraf lib && tsc",
+        "test": "vitest run"
     },
     "keywords": [
         "matrix",
@@ -45,8 +47,5 @@
     ],
     "volta": {
         "node": "18.16.0"
-    },
-    "publishConfig": {
-        "access": "public"
     }
 }
