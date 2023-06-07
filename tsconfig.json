@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "ES2022",
+        "lib": ["ESNext"],
+        "moduleResolution": "nodenext",
+        "outDir": "./lib",
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "esModuleInterop": true,
+        "noUnusedParameters": true,
+        "useDefineForClassFields": true,
+        "isolatedModules": true
+    },
+    "exclude": ["node_modules", "**/node_modules/*"]
+}
