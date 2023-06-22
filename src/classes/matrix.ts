@@ -1,18 +1,14 @@
-import type {
-    MatrixItem,
-    MatrixType,
-    HasItemCallback,
-    Matrix as M
-} from '../../types/index.js'
-
-export class Matrix<T> extends Array<MatrixItem<T>> implements M<T> {
-    static compare<T>(value: MatrixItem<T>, item: MatrixItem<T>) {
+export class Matrix<T> extends Array<MatrixItem<T>> {
+    static compare<T>(value: MatrixItem<T>, item: MatrixItem<T>): boolean {
         return value.every(
             (v, i) => JSON.stringify(v) === JSON.stringify(item[i])
         )
     }
 
-    static compareMany<T>(value: MatrixItem<T>, ...items: MatrixType<T>) {
+    static compareMany<T>(
+        value: MatrixItem<T>,
+        ...items: MatrixType<T>
+    ): boolean {
         return items.every(e =>
             value.every((v, i) => JSON.stringify(v) === JSON.stringify(e[i]))
         )
@@ -28,11 +24,11 @@ export class Matrix<T> extends Array<MatrixItem<T>> implements M<T> {
         super(...arr)
     }
 
-    get matrix() {
+    get matrix(): Array<MatrixItem<T>> {
         return Array(...this)
     }
 
-    hasItem(predicate: MatrixItem<T> | HasItemCallback<T>) {
+    hasItem(predicate: MatrixItem<T> | HasItemCallback<T>): boolean {
         if (typeof predicate === 'function') {
             let i = 0
 
@@ -49,7 +45,9 @@ export class Matrix<T> extends Array<MatrixItem<T>> implements M<T> {
             if (typeof item !== 'object' || typeof item !== 'function') {
                 return this.some(e => {
                     if (e.length === predicate.length) {
-                        return predicate.every((v, i) => v === e[i])
+                        return predicate.every(
+                            (v, i) => JSON.stringify(v) === JSON.stringify(e[i])
+                        )
                     } else return false
                 })
             }
