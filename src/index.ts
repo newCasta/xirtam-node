@@ -1,3 +1,1 @@
-import { Matrix } from './classes/matrix.js'
-
-export { Matrix }
+export { Matrix } from './classes/matrix.js'
