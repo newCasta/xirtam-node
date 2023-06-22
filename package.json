@@ -1,12 +1,8 @@
 {
     "name": "xirtam-node",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Xirtam is a library base on a class call Matrix that let you use it like if it where a matrix",
-    "exports": {
-        ".": "./lib/index.js"
-    },
     "type": "module",
-    "types": "./types/index.d.ts",
     "scripts": {
         "build": "rimraf lib && tsc",
         "test": "vitest run"
@@ -16,6 +12,14 @@
         "class",
         "array"
     ],
+    "main": "./lib/index.js",
+    "types": "./types/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./types/index.d.ts",
+            "default": "./lib/index.js"
+        }
+    },
     "author": "Juan Sebastian Castañeda Burbano <sicastaprojectos@gmail.com>",
     "license": "MIT",
     "repository": {

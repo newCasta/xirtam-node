@@ -5,12 +5,12 @@
         "lib": ["ESNext"],
         "moduleResolution": "nodenext",
         "outDir": "./lib",
-        "types": ["node", "./types/matrix.d.ts"],
+        "types": ["node"],
         "strictNullChecks": true,
         "noImplicitAny": true,
         "esModuleInterop": true,
         "noUnusedParameters": true
     },
-    "include": ["src"],
+    "include": ["src", "**/*/*.d.ts"],
     "exclude": ["node_modules", "**/node_modules/*"]
 }

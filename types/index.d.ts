@@ -1,3 +1,5 @@
+import type { MatrixItem, MatrixType, HasItemCallback } from './matrix.js'
+
 export class Matrix<T> extends Array<MatrixItem<T>> {
     /**
      * Create a new Matrix
