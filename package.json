@@ -1,5 +1,5 @@
 {
-    "name": "xirtam",
+    "name": "xirtam-node",
     "version": "1.0.0",
     "description": "Xirtam is a library base on a class call Matrix that let you use it like if it where a matrix",
     "exports": {
